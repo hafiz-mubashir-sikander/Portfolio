@@ -1,324 +1,690 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Hafiz Mubashir Sikander – Flutter Developer &amp; Game Developer</title>
-<meta name="description" content="Hafiz Mubashir Sikander is a Flutter and Unity developer at VirtueNetz, founder of Meteredo and co-founder of Hairalize. Mobile apps, games and real-world digital products.">
-<meta name="theme-color" content="#070a14">
-<meta property="og:title" content="Hafiz Mubashir Sikander – Flutter Developer &amp; Game Developer">
-<meta property="og:description" content="Flutter apps, Unity games and products shipped to Google Play and the App Store.">
-<meta property="og:type" content="profile">
-<meta property="profile:first_name" content="Hafiz Mubashir">
-<meta property="profile:last_name" content="Sikander">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%238B5CF6'/%3E%3Ctext x='32' y='43' font-size='30' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EMS%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Hafiz Mubashir Sikander","jobTitle":"Flutter Developer","description":"Flutter and Unity developer, founder of Meteredo and co-founder of Hairalize.","worksFor":{"@type":"Organization","name":"VirtueNetz"},"alumniOf":"Khwaja Fareed University of Engineering & Information Technology","address":{"@type":"PostalAddress","addressLocality":"Rahim Yar Khan","addressRegion":"Punjab","addressCountry":"PK"},"sameAs":["https://www.linkedin.com/in/hafiz-mubashir-sikander","https://github.com/hafiz-mubashir-sikander"]}</script>
-<script>
-/* Runs before first paint: enables JS-only styles and applies a saved theme (no wrong-theme flash).
-   With no saved choice, the CSS follows the system preference. */
-(function(){var d=document.documentElement;d.classList.add("js");try{var t=localStorage.getItem("th");if(t==="light"||t==="dark")d.dataset.theme=t}catch(e){}})();
-</script>
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/animations.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hafiz Mubashir Sikander – Flutter Developer &amp; Game Developer</title>
+  <meta name="description"
+    content="Hafiz Mubashir Sikander is a Flutter and Unity developer at VirtueNetz, founder of Meteredo and co-founder of Hairalize. Mobile apps, games and real-world digital products.">
+  <meta name="theme-color" content="#070a14">
+  <meta property="og:title" content="Hafiz Mubashir Sikander – Flutter Developer &amp; Game Developer">
+  <meta property="og:description"
+    content="Flutter apps, Unity games and products shipped to Google Play and the App Store.">
+  <meta property="og:type" content="profile">
+  <meta property="profile:first_name" content="Hafiz Mubashir">
+  <meta property="profile:last_name" content="Sikander">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Hafiz Mubashir Sikander","jobTitle":"Flutter Developer","description":"Flutter and Unity developer, founder of Meteredo and co-founder of Hairalize.","worksFor":{"@type":"Organization","name":"VirtueNetz"},"alumniOf":"Khwaja Fareed University of Engineering & Information Technology","address":{"@type":"PostalAddress","addressLocality":"Rahim Yar Khan","addressRegion":"Punjab","addressCountry":"PK"},"sameAs":["https://www.linkedin.com/in/hafiz-mubashir-sikander","https://github.com/hafiz-mubashir-sikander"]}</script>
+  <script>
+    /* Runs before first paint: enables JS-only styles and applies a saved theme (no wrong-theme flash).
+       With no saved choice, the CSS follows the system preference. */
+    (function () { var d = document.documentElement; d.classList.add("js"); try { var t = localStorage.getItem("th"); if (t === "light" || t === "dark") d.dataset.theme = t } catch (e) { } })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
 </head>
+
 <body>
-<a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-<!-- SVG icon sprite (stroke icons, 24×24) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-<defs>
-<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
-<symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
-<symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
-<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></symbol>
-<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
-<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
-<symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
-<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
-<symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></symbol>
-<symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-<symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
-<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
-<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><path d="m8.21 13.89-1.21 9.11 5-3 5 3-1.21-9.12"/></symbol>
-<symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
-<symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
-<symbol id="i-gamepad" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/></symbol>
-<symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
-<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
-<symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
-<symbol id="i-grad" viewBox="0 0 24 24"><path d="m22 10-10-5L2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
-<symbol id="i-ext" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></symbol>
-<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-<symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
-<symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
-<symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"/></symbol>
-<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
-<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
-<symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></symbol>
-<symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
-<symbol id="i-git" viewBox="0 0 24 24"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
-<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
-<symbol id="i-quote" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4M14 21c3 0 7-1 7-8V5a1 1 0 0 0-1-1h-5a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4"/></symbol>
-<symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></symbol>
-<symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 4m-2 0a2 2 0 1 0 4 0 2 2 0 1 0-4 0"/></symbol>
-<symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" stroke="none" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
-</defs>
-</svg>
+  <!-- SVG icon sprite (stroke icons, 24×24) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </symbol>
+      <symbol id="i-arrow-ur" viewBox="0 0 24 24">
+        <path d="M7 17 17 7M7 7h10v10" />
+      </symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5" />
+        <path
+          d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18" />
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
+        <path d="m22 6-10 7L2 6" />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24">
+        <rect x="9" y="9" width="13" height="13" rx="2" />
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="M20 6 9 17l-5-5" />
+      </symbol>
+      <symbol id="i-award" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="7" />
+        <path d="m8.21 13.89-1.21 9.11 5-3 5 3-1.21-9.12" />
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+      </symbol>
+      <symbol id="i-smartphone" viewBox="0 0 24 24">
+        <rect x="5" y="2" width="14" height="20" rx="2" />
+        <path d="M12 18h.01" />
+      </symbol>
+      <symbol id="i-gamepad" viewBox="0 0 24 24">
+        <rect x="2" y="6" width="20" height="12" rx="4" />
+        <path d="M6 12h4M8 10v4M15 13h.01M18 11h.01" />
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24">
+        <path d="m16 18 6-6-6-6M8 6l-6 6 6 6" />
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24">
+        <path d="m12 2 10 5-10 5L2 7l10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="2" y="7" width="20" height="14" rx="2" />
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+      </symbol>
+      <symbol id="i-grad" viewBox="0 0 24 24">
+        <path d="m22 10-10-5L2 10l10 5 10-5z" />
+        <path d="M6 12v5c3 2 9 2 12 0v-5" />
+      </symbol>
+      <symbol id="i-ext" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 6v6l4 2" />
+      </symbol>
+      <symbol id="i-chev-l" viewBox="0 0 24 24">
+        <path d="m15 18-6-6 6-6" />
+      </symbol>
+      <symbol id="i-chev-r" viewBox="0 0 24 24">
+        <path d="m9 18 6-6-6-6" />
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24">
+        <path d="M6 4l14 8-14 8V4z" />
+      </symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24">
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <rect x="9" y="9" width="6" height="6" />
+        <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
+      </symbol>
+      <symbol id="i-db" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="5" rx="9" ry="3" />
+        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+      </symbol>
+      <symbol id="i-git" viewBox="0 0 24 24">
+        <path d="M6 3v12" />
+        <circle cx="18" cy="6" r="3" />
+        <circle cx="6" cy="18" r="3" />
+        <path d="M18 9a9 9 0 0 1-9 9" />
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.3-4.3" />
+      </symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24">
+        <path
+          d="M3 21c3 0 7-1 7-8V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4M14 21c3 0 7-1 7-8V5a1 1 0 0 0-1-1h-5a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4" />
+      </symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 8v4M12 16h.01" />
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24">
+        <path
+          d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 4m-2 0a2 2 0 1 0 4 0 2 2 0 1 0-4 0" />
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 16 16">
+        <path fill="currentColor" stroke="none"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+      </symbol>
+    </defs>
+  </svg>
 
-<div id="prog" aria-hidden="true"></div>
+  <div id="prog" aria-hidden="true"></div>
 
-<!-- ============ NAV ============ -->
-<div class="navw" id="navw">
-  <nav class="nav" aria-label="Main">
-    <a class="mono" href="#home" aria-label="Hafiz Mubashir Sikander – home">MS</a>
-    <div class="nlinks" id="nlinks">
-      <span class="nind" id="nind" aria-hidden="true"></span>
-      <a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
-    </div>
-    <div class="nright">
-      <a class="btn sm pri shine" href="#contact">Let’s talk</a>
-      <button class="ibtn theme-btn" id="theme" type="button" aria-label="Switch theme"><svg class="i sun"><use href="#i-sun"/></svg><svg class="i moon"><use href="#i-moon"/></svg></button>
-      <button class="ibtn menu-btn" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nlinks"><svg class="i bars"><use href="#i-menu"/></svg><svg class="i x"><use href="#i-x"/></svg></button>
-    </div>
-  </nav>
-</div>
+  <!-- ============ NAV ============ -->
+  <div class="navw" id="navw">
+    <nav class="nav" aria-label="Main">
+      <a class="mono" href="#home" aria-label="Hafiz Mubashir Sikander – home">MS</a>
+      <div class="nlinks" id="nlinks">
+        <span class="nind" id="nind" aria-hidden="true"></span>
+        <a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a
+          href="#experience">Experience</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
+      </div>
+      <div class="nright">
+        <a class="btn sm pri shine" href="#contact">Let’s talk</a>
+        <button class="ibtn theme-btn" id="theme" type="button" aria-label="Switch theme"><svg class="i sun">
+            <use href="#i-sun" />
+          </svg><svg class="i moon">
+            <use href="#i-moon" />
+          </svg></button>
+        <button class="ibtn menu-btn" id="menu" type="button" aria-label="Open menu" aria-expanded="false"
+          aria-controls="nlinks"><svg class="i bars">
+            <use href="#i-menu" />
+          </svg><svg class="i x">
+            <use href="#i-x" />
+          </svg></button>
+      </div>
+    </nav>
+  </div>
 
-<main id="main">
+  <main id="main">
 
-<!-- ============ HERO ============ -->
-<section id="home" data-live aria-label="Introduction">
-  <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="hero-light" id="hlight"></div></div>
-  <div class="wrap hero">
-    <div class="hero-copy">
-      <span class="pill h-in" style="--d:60"><span class="dot"></span>Flutter Developer at VirtueNetz</span>
-      <h1 id="name" aria-label="Hafiz Mubashir Sikander"><span class="w">Hafiz</span> <span class="w">Mubashir</span> <span class="w"><span class="gw grad">Sikander</span></span></h1>
-      <div class="tag h-in" style="--d:420"><i>I’m a</i><span><span id="role" aria-live="off">Flutter Developer</span><span class="caret" aria-hidden="true"></span></span></div>
-      <p class="founder h-in" style="--d:500"><span><b>Founder</b> of Meteredo</span><span class="sep" aria-hidden="true">·</span><span><b>Co-Founder</b> of Hairalize</span></p>
-      <p class="lead h-in" style="--d:580">I build Flutter apps and Unity games, and I ship them. Meteredo, the electricity tracker I founded, is live on Google Play, and so is the game I built at VirtueNetz.</p>
-      <div class="row hero-cta h-in" style="--d:680">
-        <a class="btn pri shine travel mag" href="#projects">Explore my work <svg class="i sm arr"><use href="#i-arrow-right"/></svg></a>
-        <a class="btn mag" href="#contact">Get in touch</a>
-        <a class="btn mag" href="resume/flutter-developer-resume.pdf" download><svg class="i sm"><use href="#i-download"/></svg>Resume</a>
-        <div class="socials">
-          <a class="ibtn" href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in a new tab)"><svg class="i sm"><use href="#i-linkedin"/></svg></a>
-          <a class="ibtn" href="https://github.com/hafiz-mubashir-sikander" target="_blank" rel="noopener" aria-label="GitHub profile (opens in a new tab)"><svg class="i sm fill" viewBox="0 0 16 16"><use href="#i-github"/></svg></a>
+    <!-- ============ HERO ============ -->
+    <section id="home" data-live aria-label="Introduction">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-grid"></div>
+        <div class="hero-light" id="hlight"></div>
+      </div>
+      <div class="wrap hero">
+        <div class="hero-copy">
+          <span class="pill h-in" style="--d:60"><span class="dot"></span>Flutter Developer at VirtueNetz</span>
+          <h1 id="name" aria-label="Hafiz Mubashir Sikander"><span class="w">Hafiz</span> <span
+              class="w">Mubashir</span> <span class="w"><span class="gw grad">Sikander</span></span></h1>
+          <div class="tag h-in" style="--d:420"><i>I’m a</i><span><span id="role" aria-live="off">Flutter
+                Developer</span><span class="caret" aria-hidden="true"></span></span></div>
+          <p class="founder h-in" style="--d:500"><span><b>Founder</b> of Meteredo</span><span class="sep"
+              aria-hidden="true">·</span><span><b>Co-Founder</b> of Hairalize</span></p>
+          <p class="lead h-in" style="--d:580">I build Flutter apps and Unity games, and I ship them. Meteredo, the
+            electricity tracker I founded, is live on Google Play, and so is the game I built at VirtueNetz.</p>
+          <div class="row hero-cta h-in" style="--d:680">
+            <a class="btn pri shine travel mag" href="#projects">Explore my work <svg class="i sm arr">
+                <use href="#i-arrow-right" />
+              </svg></a>
+            <a class="btn mag" href="#contact">Get in touch</a>
+            <a class="btn mag" href="resume/flutter-developer-resume.pdf" download><svg class="i sm">
+                <use href="#i-download" />
+              </svg>Resume</a>
+            <div class="socials">
+              <a class="ibtn" href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank" rel="noopener"
+                aria-label="LinkedIn profile (opens in a new tab)"><svg class="i sm">
+                  <use href="#i-linkedin" />
+                </svg></a>
+              <a class="ibtn" href="https://github.com/hafiz-mubashir-sikander" target="_blank" rel="noopener"
+                aria-label="GitHub profile (opens in a new tab)"><svg class="i sm fill" viewBox="0 0 16 16">
+                  <use href="#i-github" />
+                </svg></a>
+            </div>
+          </div>
+          <div class="hero-stats h-in" style="--d:780" id="hstats" aria-label="Highlights"></div>
+        </div>
+
+        <div class="stage" id="stage">
+          <div class="particles" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i
+              style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i></div>
+          <div class="frame">
+            <div class="img"><img src="assets/profile-photo.webp" width="312" height="312"
+                alt="Portrait of Hafiz Mubashir Sikander" fetchpriority="high" decoding="async"></div>
+          </div>
+          <div class="orbit" aria-hidden="true" id="orbit"></div>
+          <div class="badge b1 float"><svg class="i">
+              <use href="#i-award" />
+            </svg><span>1st Position, Project Expo 2026</span></div>
+          <div class="badge b2 float"><svg class="i">
+              <use href="#i-star" />
+            </svg><span>Rising Star of the Year 2026</span></div>
         </div>
       </div>
-      <div class="hero-stats h-in" style="--d:780" id="hstats" aria-label="Highlights"></div>
-    </div>
+    </section>
 
-    <div class="stage" id="stage">
-      <div class="particles" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i></div>
-      <div class="frame">
-        <div class="img"><img src="assets/profile-photo.webp" width="312" height="312" alt="Portrait of Hafiz Mubashir Sikander" fetchpriority="high" decoding="async"></div>
+    <!-- ============ STATS ============ -->
+    <section class="stats" aria-label="Portfolio statistics" style="padding-top:0">
+      <div class="wrap">
+        <div class="stats-row rv" id="stats"></div>
       </div>
-      <div class="orbit" aria-hidden="true" id="orbit"></div>
-      <div class="badge b1 float"><svg class="i"><use href="#i-award"/></svg><span>1st Position, Project Expo 2026</span></div>
-      <div class="badge b2 float"><svg class="i"><use href="#i-star"/></svg><span>Rising Star of the Year 2026</span></div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ============ STATS ============ -->
-<section class="stats" aria-label="Portfolio statistics" style="padding-top:0">
-  <div class="wrap"><div class="stats-row rv" id="stats"></div></div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section id="about">
-  <div class="wrap">
-    <div class="sh rv"><span class="eyebrow">About</span><h2 class="h2">More than a developer. <span class="grad">A builder of experiences.</span></h2><p class="sub">Computer science graduate from KFUEIT, working as a Flutter developer on production apps and games.</p></div>
-    <div class="bento">
-      <div class="card b-4 about-main rv spot" style="--ac:var(--p)">
-        <p>I specialise in cross-platform mobile apps with <strong>Flutter, Dart, Firebase and REST APIs</strong>. At VirtueNetz I’ve taken client and company products all the way to the Google Play Store and the App Store.</p>
-        <p>Alongside apps, I work on 2D games in <strong>Unity and C#</strong>: movement, levels, enemies, cutscenes and Android release. I’m also the founder of Meteredo and a co-founder of Hairalize, our award-winning final year project.</p>
-        <p>I care about clean structure, interfaces people can use without thinking, and software that solves an everyday problem.</p>
-      </div>
-      <div class="card b-2 code rv spot right" aria-label="Quick facts">
-        <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-        <div><em>const</em> mubashir = {<br>&nbsp;&nbsp;base: <u>“Rahim Yar Khan, Pakistan”</u>,<br>&nbsp;&nbsp;works: <u>“VirtueNetz”</u>,<br>&nbsp;&nbsp;degree: <u>“BS Computer Science”</u>,<br>&nbsp;&nbsp;builds: [<u>“Flutter apps”</u>, <u>“Unity games”</u>],<br>&nbsp;&nbsp;founder: [<u>“Meteredo”</u>],<br>&nbsp;&nbsp;coFounder: [<u>“Hairalize”</u>]<br>};</div>
-      </div>
-      <div class="card b-2 rv spot" style="--ac:var(--c);--i:1"><div class="ico"><svg class="i"><use href="#i-smartphone"/></svg></div><h3>Mobile development</h3><p class="mu">Flutter on Android and iOS, offline-first flows, ERP and REST integration.</p></div>
-      <div class="card b-2 rv spot" style="--ac:var(--a);--i:2"><div class="ico"><svg class="i"><use href="#i-gamepad"/></svg></div><h3>Game development</h3><p class="mu">Unity 2D platformers, boss fights, Timeline cutscenes, AdMob.</p></div>
-      <div class="card b-2 rv spot" style="--ac:var(--g);--i:3"><div class="ico"><svg class="i"><use href="#i-layers"/></svg></div><h3>Product development</h3><p class="mu">From idea to store listing, including privacy policy, support and monitoring.</p></div>
-      <div class="card b-3 rv spot" style="--ac:var(--k);--i:1"><div class="ico"><svg class="i"><use href="#i-pin"/></svg></div><h3>Based in Pakistan</h3>
-        <div class="kv" style="margin-top:12px"><div><span>Location</span><b>Rahim Yar Khan, Punjab</b></div><div><span>Works at</span><b>VirtueNetz · on-site</b></div><div><span>Local time</span><b id="localtime">—</b></div></div></div>
-      <a class="card b-3 rv spot link-card" style="--ac:var(--c);--i:2" href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank" rel="noopener" aria-label="LinkedIn profile, opens in a new tab">
-        <div><div class="ico"><svg class="i"><use href="#i-linkedin"/></svg></div><h3>On LinkedIn</h3><p class="mu">500+ connections, two recommendations and both awards are published on my profile.</p></div>
-        <span class="go">View profile <svg class="i sm"><use href="#i-arrow-ur"/></svg></span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROJECTS ============ -->
-<section id="projects">
-  <div class="wrap">
-    <div class="sh rv"><span class="eyebrow">Projects</span><h2 class="h2">Projects I’ve <span class="grad">shipped</span></h2><p class="sub">Every project here is real. Company and client source code stays private, so I show what I built and what I owned.</p></div>
-    <div class="feat" id="feat" aria-label="Featured projects"></div>
-    <div class="ptools rv" id="ptools">
-      <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
-      <div class="search"><svg class="i"><use href="#i-search"/></svg><input id="sq" type="search" placeholder="Search projects" aria-label="Search projects by name, technology or category" autocomplete="off"></div>
-    </div>
-    <p class="sr" id="pstat" role="status" aria-live="polite"></p>
-    <div class="pg" id="pg"></div>
-    <p class="empty hide" id="none">No projects match that search.</p>
-  </div>
-</section>
-
-<!-- ============ SKILLS ============ -->
-<section id="skills">
-  <div class="wrap">
-    <div class="sh rv"><span class="eyebrow">Skills</span><h2 class="h2">Tools I <span class="grad">work with</span></h2><p class="sub">Grouped by how I use them. No percentages, just what I’ve built with each.</p></div>
-    <div class="skg" id="sk"></div>
-  </div>
-</section>
-
-<!-- ============ EXPERIENCE ============ -->
-<section id="experience">
-  <div class="wrap">
-    <div class="sh rv"><span class="eyebrow">Experience &amp; education</span><h2 class="h2">Where I’ve <span class="grad">worked and studied</span></h2><p class="sub" id="expsub">Flutter developer at VirtueNetz, with a BS in Computer Science from KFUEIT.</p></div>
-    <div class="tl" id="tl">
-      <article class="card ev now rv spot" style="--ac:var(--p)">
-        <div class="when"><svg class="i sm"><use href="#i-briefcase"/></svg>Jul 2025 – Present · Full-time, on-site</div>
-        <h3>Flutter Developer</h3><div class="org">VirtueNetz.PK – Pakistan’s Tech &amp; AI Innovation Studio</div>
-        <p class="d">Developing and maintaining cross-platform apps with Flutter and Dart. Shipped United Ceres for Android and iOS, built Technician ID, and built and released Shards Of Light.</p>
-        <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Firebase</span><span class="chip">REST APIs</span><span class="chip">Unity</span></div>
-      </article>
-      <article class="card ev award rv spot">
-        <div class="when"><svg class="i sm"><use href="#i-award"/></svg>Mar 2026</div>
-        <h3>Rising Star of the Year</h3><div class="org">VirtueNetz</div>
-        <p class="d" style="margin-bottom:0">Recognised for performance, dedication, continuous learning and professional growth.</p>
-      </article>
-      <article class="card ev rv spot" style="--ac:var(--g)">
-        <div class="when"><svg class="i sm"><use href="#i-briefcase"/></svg>Apr 2025 – Jul 2025 · Internship</div>
-        <h3>Flutter Intern</h3><div class="org">VirtueNetz · Pakistan</div>
-        <p class="d">Hands-on mobile development with Flutter, Dart and Firebase. Designed and built several projects independently.</p>
-        <div class="chips"><span class="chip">Firebase</span><span class="chip">REST APIs</span></div>
-      </article>
-      <article class="card ev edu rv spot">
-        <div class="when"><svg class="i sm"><use href="#i-grad"/></svg>Sep 2022 – Jul 2026</div>
-        <h3>BS Computer Science</h3><div class="org">Khwaja Fareed University of Engineering &amp; Information Technology (KFUEIT)</div>
-        <p class="d">Final year project: Hairalize, an AI-powered alopecia detection system.</p>
-        <div class="chips"><span class="chip">Artificial Intelligence</span><span class="chip">Data Structures &amp; Algorithms</span><span class="chip">Database Systems</span><span class="chip">Mobile Application Development</span><span class="chip">Software Engineering</span><span class="chip">Web Programming</span></div>
-      </article>
-      <article class="card ev edu rv spot">
-        <div class="when"><svg class="i sm"><use href="#i-grad"/></svg>Sep 2020 – Jul 2022</div>
-        <h3>Intermediate (ICS)</h3><div class="org">Doctors Public School &amp; College</div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ACHIEVEMENTS ============ -->
-<section id="achievements">
-  <div class="wrap">
-    <div class="sh rv"><span class="eyebrow">Achievements &amp; recommendations</span><h2 class="h2">Recognition &amp; <span class="grad">what colleagues say</span></h2><p class="sub">Two awards, both from 2026.</p></div>
-    <div class="ach">
-      <article class="card acard travel glow spot rv" style="--ac:var(--a);--tc:var(--a)">
-        <div class="ico"><svg class="i"><use href="#i-award"/></svg></div>
-        <div><h3>1st Position, Project Expo 2026</h3><div class="meta"><b>KFUEIT</b><span>Jul 2026</span><span>PKR 15,000 prize</span></div>
-        <p>First place in the Social Sciences and Natural Sciences category at KFUEIT’s 2nd Industrial Open House &amp; Project Expo 2026, for Hairalize, our AI-powered alopecia detection system.</p></div>
-      </article>
-      <article class="card acard v travel glow spot rv" style="--ac:var(--p);--tc:var(--p);--i:1">
-        <div class="ico"><svg class="i"><use href="#i-star"/></svg></div>
-        <div><h3>Rising Star of the Year 2026</h3><div class="meta"><b>VirtueNetz</b><span>Mar 2026</span></div>
-        <p>Presented by the CEO of VirtueNetz for outstanding performance, dedication, continuous learning and professional growth.</p></div>
-      </article>
-    </div>
-    <div class="rec rv" id="rec" role="region" aria-roledescription="carousel" aria-label="Recommendations">
-      <div class="rec-head"><h3>Recommendations</h3>
-        <div class="rec-ctl"><div class="dots" id="rdots"></div>
-          <button class="ibtn" id="qp" type="button" aria-label="Previous recommendation"><svg class="i sm"><use href="#i-chev-l"/></svg></button>
-          <button class="ibtn" id="qn" type="button" aria-label="Next recommendation"><svg class="i sm"><use href="#i-chev-r"/></svg></button></div></div>
-      <div class="rviewport" id="rview"><div class="rtrack" id="rtrack"></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section id="contact">
-  <div class="wrap">
-    <div class="sh rv"><span class="eyebrow">Contact</span><h2 class="h2">Have an idea? <span class="grad">Let’s build it.</span></h2><p class="sub">Send a message and I’ll reply. You can also reach me on LinkedIn.</p></div>
-    <div class="contact">
-      <div class="cinfo rv">
-        <a class="crow" href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank" rel="noopener"><span class="ico" style="--ac:var(--c)"><svg class="i"><use href="#i-linkedin"/></svg></span><span><small>LinkedIn</small><b>hafiz-mubashir-sikander</b></span><svg class="i sm end"><use href="#i-arrow-ur"/></svg></a>
-        <a class="crow" href="https://github.com/hafiz-mubashir-sikander" target="_blank" rel="noopener"><span class="ico" style="--ac:var(--p)"><svg class="i fill" viewBox="0 0 16 16"><use href="#i-github"/></svg></span><span><small>GitHub</small><b>hafiz-mubashir-sikander</b></span><svg class="i sm end"><use href="#i-arrow-ur"/></svg></a>
-        <a class="crow" href="resume/flutter-developer-resume.pdf" download><span class="ico" style="--ac:var(--a)"><svg class="i"><use href="#i-download"/></svg></span><span><small>Resume · PDF</small><b>Flutter Developer resume</b></span><svg class="i sm end"><use href="#i-download"/></svg></a>
-        <button class="crow hide" id="copyemail" type="button"><span class="ico" style="--ac:var(--k)"><svg class="i"><use href="#i-mail"/></svg></span><span><small>Email · tap to copy</small><b id="emailtxt"></b></span><svg class="i sm end" id="copyico"><use href="#i-copy"/></svg></button>
-        <div class="crow" style="cursor:default"><span class="ico" style="--ac:var(--g)"><svg class="i"><use href="#i-pin"/></svg></span><span><small>Based in</small><b>Rahim Yar Khan, Pakistan</b></span></div>
-      </div>
-      <form class="card form rv" id="cf" novalidate style="--i:1">
-        <div class="frow">
-          <div class="fld"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" placeholder="Your name" required aria-describedby="e-name"><span class="err" id="e-name" role="alert"></span></div>
-          <div class="fld"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="e-email"><span class="err" id="e-email" role="alert"></span></div>
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+      <div class="wrap">
+        <div class="sh rv"><span class="eyebrow">About</span>
+          <h2 class="h2">More than a developer. <span class="grad">A builder of experiences.</span></h2>
+          <p class="sub">Computer science graduate from KFUEIT, working as a Flutter developer on production apps and
+            games.</p>
         </div>
-        <div class="fld"><label for="f-sub">Subject <i>(optional)</i></label><input id="f-sub" name="subject" placeholder="What’s it about?"></div>
-        <div class="fld"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="4" placeholder="Tell me about your project" required aria-describedby="e-msg"></textarea><span class="err" id="e-msg" role="alert"></span></div>
-        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="fstatus" id="fs" role="status" aria-live="polite" hidden></div>
-        <div class="row"><button class="btn pri shine travel" id="sb" type="submit"><span id="sbt">Send message</span> <svg class="i sm arr"><use href="#i-arrow-right"/></svg></button>
-          <a class="btn hide" id="alt" href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank" rel="noopener">Message on LinkedIn <svg class="i sm"><use href="#i-arrow-ur"/></svg></a></div>
-      </form>
-    </div>
-  </div>
-</section>
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="foot" id="footer" aria-label="Site footer">
-  <div class="wrap">
-    <div class="fcta rv">
-      <div><h2>Have a product in mind?</h2><p>I’m a Flutter and Unity developer who takes work from first screen to store listing. The fastest way to reach me is LinkedIn.</p></div>
-      <div class="row"><a class="btn pri shine" href="#contact">Send a message <svg class="i sm arr"><use href="#i-arrow-right"/></svg></a><a class="btn" href="resume/flutter-developer-resume.pdf" download><svg class="i sm"><use href="#i-download"/></svg>Resume</a><a class="btn" href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank" rel="noopener">LinkedIn <svg class="i sm"><use href="#i-arrow-ur"/></svg></a></div>
-    </div>
-
-    <div class="fgrid">
-      <div class="fbrand">
-        <div class="nm"><a class="mono" href="#home" aria-label="Back to top">MS</a><div><b>Hafiz Mubashir Sikander</b><span>Flutter &amp; Game Developer</span></div></div>
-        <p>Mobile apps and Unity games, from the first screen to the store listing. Founder of Meteredo, co-founder of Hairalize.</p>
-        <span class="pill"><span class="dot"></span>Flutter Developer at VirtueNetz</span>
-        <div class="row" style="gap:8px">
-          <a class="ibtn" href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><svg class="i sm"><use href="#i-linkedin"/></svg></a>
-          <a class="ibtn" href="https://github.com/hafiz-mubashir-sikander" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><svg class="i sm fill" viewBox="0 0 16 16"><use href="#i-github"/></svg></a>
+        <div class="bento">
+          <div class="card b-4 about-main rv spot" style="--ac:var(--p)">
+            <p>I specialise in cross-platform mobile apps with <strong>Flutter, Dart, Firebase and REST APIs</strong>.
+              At VirtueNetz I’ve taken client and company products all the way to the Google Play Store and the App
+              Store.</p>
+            <p>Alongside apps, I work on 2D games in <strong>Unity and C#</strong>: movement, levels, enemies, cutscenes
+              and Android release. I’m also the founder of Meteredo and a co-founder of Hairalize, our award-winning
+              final year project.</p>
+            <p>I care about clean structure, interfaces people can use without thinking, and software that solves an
+              everyday problem.</p>
+          </div>
+          <div class="card b-2 code rv spot right" aria-label="Quick facts">
+            <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div><em>const</em> mubashir = {<br>&nbsp;&nbsp;base: <u>“Rahim Yar Khan,
+                Pakistan”</u>,<br>&nbsp;&nbsp;works: <u>“VirtueNetz”</u>,<br>&nbsp;&nbsp;degree: <u>“BS Computer
+                Science”</u>,<br>&nbsp;&nbsp;builds: [<u>“Flutter apps”</u>, <u>“Unity
+                games”</u>],<br>&nbsp;&nbsp;founder: [<u>“Meteredo”</u>],<br>&nbsp;&nbsp;coFounder:
+              [<u>“Hairalize”</u>]<br>};</div>
+          </div>
+          <div class="card b-2 rv spot" style="--ac:var(--c);--i:1">
+            <div class="ico"><svg class="i">
+                <use href="#i-smartphone" />
+              </svg></div>
+            <h3>Mobile development</h3>
+            <p class="mu">Flutter on Android and iOS, offline-first flows, ERP and REST integration.</p>
+          </div>
+          <div class="card b-2 rv spot" style="--ac:var(--a);--i:2">
+            <div class="ico"><svg class="i">
+                <use href="#i-gamepad" />
+              </svg></div>
+            <h3>Game development</h3>
+            <p class="mu">Unity 2D platformers, boss fights, Timeline cutscenes, AdMob.</p>
+          </div>
+          <div class="card b-2 rv spot" style="--ac:var(--g);--i:3">
+            <div class="ico"><svg class="i">
+                <use href="#i-layers" />
+              </svg></div>
+            <h3>Product development</h3>
+            <p class="mu">From idea to store listing, including privacy policy, support and monitoring.</p>
+          </div>
+          <div class="card b-3 rv spot" style="--ac:var(--k);--i:1">
+            <div class="ico"><svg class="i">
+                <use href="#i-pin" />
+              </svg></div>
+            <h3>Based in Pakistan</h3>
+            <div class="kv" style="margin-top:12px">
+              <div><span>Location</span><b>Rahim Yar Khan, Punjab</b></div>
+              <div><span>Works at</span><b>VirtueNetz · on-site</b></div>
+              <div><span>Local time</span><b id="localtime">—</b></div>
+            </div>
+          </div>
+          <a class="card b-3 rv spot link-card" style="--ac:var(--c);--i:2"
+            href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank" rel="noopener"
+            aria-label="LinkedIn profile, opens in a new tab">
+            <div>
+              <div class="ico"><svg class="i">
+                  <use href="#i-linkedin" />
+                </svg></div>
+              <h3>On LinkedIn</h3>
+              <p class="mu">500+ connections, two recommendations and both awards are published on my profile.</p>
+            </div>
+            <span class="go">View profile <svg class="i sm">
+                <use href="#i-arrow-ur" />
+              </svg></span>
+          </a>
         </div>
       </div>
-      <nav class="fcol" aria-label="Footer navigation"><h3>Navigate</h3>
-        <ul><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience &amp; education</a></li><li><a href="#achievements">Achievements</a></li><li><a href="#contact">Contact</a></li><li><a href="resume/flutter-developer-resume.pdf" download>Resume (PDF)<svg class="i" aria-hidden="true"><use href="#i-download"/></svg></a></li></ul></nav>
-      <div class="fcol"><h3>Projects</h3><ul id="f-projects"></ul></div>
-      <div class="fcol wide"><h3>Products &amp; links</h3><ul id="f-links"></ul></div>
-      <div class="fcol contact-col"><h3>Connect</h3>
-        <div class="fmeta">
-          <div><svg class="i"><use href="#i-pin"/></svg><span>Rahim Yar Khan,<br>Punjab, Pakistan</span></div>
-          <div><svg class="i"><use href="#i-clock"/></svg><span>Local time <b id="ftime">—</b></span></div>
-          <div><svg class="i"><use href="#i-briefcase"/></svg><span>VirtueNetz, on-site</span></div>
-          <div class="hide" id="f-email-row"><svg class="i"><use href="#i-mail"/></svg><button class="lk" id="f-email" type="button" style="background:none;border:0;padding:0;color:var(--tx);cursor:pointer;font:inherit;font-weight:600;text-align:left"></button></div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="sh rv"><span class="eyebrow">Projects</span>
+          <h2 class="h2">Projects I’ve <span class="grad">shipped</span></h2>
+          <p class="sub">Every project here is real. Company and client source code stays private, so I show what I
+            built and what I owned.</p>
+        </div>
+        <div class="feat" id="feat" aria-label="Featured projects"></div>
+        <div class="ptools rv" id="ptools">
+          <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+          <div class="search"><svg class="i">
+              <use href="#i-search" />
+            </svg><input id="sq" type="search" placeholder="Search projects"
+              aria-label="Search projects by name, technology or category" autocomplete="off"></div>
+        </div>
+        <p class="sr" id="pstat" role="status" aria-live="polite"></p>
+        <div class="pg" id="pg"></div>
+        <p class="empty hide" id="none">No projects match that search.</p>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills">
+      <div class="wrap">
+        <div class="sh rv"><span class="eyebrow">Skills</span>
+          <h2 class="h2">Tools I <span class="grad">work with</span></h2>
+          <p class="sub">Grouped by how I use them. No percentages, just what I’ve built with each.</p>
+        </div>
+        <div class="skg" id="sk"></div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience">
+      <div class="wrap">
+        <div class="sh rv"><span class="eyebrow">Experience &amp; education</span>
+          <h2 class="h2">Where I’ve <span class="grad">worked and studied</span></h2>
+          <p class="sub" id="expsub">Flutter developer at VirtueNetz, with a BS in Computer Science from KFUEIT.</p>
+        </div>
+        <div class="tl" id="tl">
+          <article class="card ev now rv spot" style="--ac:var(--p)">
+            <div class="when"><svg class="i sm">
+                <use href="#i-briefcase" />
+              </svg>Jul 2025 – Present · Full-time, on-site</div>
+            <h3>Flutter Developer</h3>
+            <div class="org">VirtueNetz.PK – Pakistan’s Tech &amp; AI Innovation Studio</div>
+            <p class="d">Developing and maintaining cross-platform apps with Flutter and Dart. Shipped United Ceres for
+              Android and iOS, built Technician ID, and built and released Shards Of Light.</p>
+            <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span
+                class="chip">Firebase</span><span class="chip">REST APIs</span><span class="chip">Unity</span></div>
+          </article>
+          <article class="card ev award rv spot">
+            <div class="when"><svg class="i sm">
+                <use href="#i-award" />
+              </svg>Mar 2026</div>
+            <h3>Rising Star of the Year</h3>
+            <div class="org">VirtueNetz</div>
+            <p class="d" style="margin-bottom:0">Recognised for performance, dedication, continuous learning and
+              professional growth.</p>
+          </article>
+          <article class="card ev rv spot" style="--ac:var(--g)">
+            <div class="when"><svg class="i sm">
+                <use href="#i-briefcase" />
+              </svg>Apr 2025 – Jul 2025 · Internship</div>
+            <h3>Flutter Intern</h3>
+            <div class="org">VirtueNetz · Pakistan</div>
+            <p class="d">Hands-on mobile development with Flutter, Dart and Firebase. Designed and built several
+              projects independently.</p>
+            <div class="chips"><span class="chip">Firebase</span><span class="chip">REST APIs</span></div>
+          </article>
+          <article class="card ev edu rv spot">
+            <div class="when"><svg class="i sm">
+                <use href="#i-grad" />
+              </svg>Sep 2022 – Jul 2026</div>
+            <h3>BS Computer Science</h3>
+            <div class="org">Khwaja Fareed University of Engineering &amp; Information Technology (KFUEIT)</div>
+            <p class="d">Final year project: Hairalize, an AI-powered alopecia detection system.</p>
+            <div class="chips"><span class="chip">Artificial Intelligence</span><span class="chip">Data Structures &amp;
+                Algorithms</span><span class="chip">Database Systems</span><span class="chip">Mobile Application
+                Development</span><span class="chip">Software Engineering</span><span class="chip">Web
+                Programming</span></div>
+          </article>
+          <article class="card ev edu rv spot">
+            <div class="when"><svg class="i sm">
+                <use href="#i-grad" />
+              </svg>Sep 2020 – Jul 2022</div>
+            <h3>Intermediate (ICS)</h3>
+            <div class="org">Doctors Public School &amp; College</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section id="achievements">
+      <div class="wrap">
+        <div class="sh rv"><span class="eyebrow">Achievements &amp; recommendations</span>
+          <h2 class="h2">Recognition &amp; <span class="grad">what colleagues say</span></h2>
+          <p class="sub">Two awards, both from 2026.</p>
+        </div>
+        <div class="ach">
+          <article class="card acard travel glow spot rv" style="--ac:var(--a);--tc:var(--a)">
+            <figure class="aph"><img src="assets/award-project-expo.webp" width="782" height="522"
+                alt="Hafiz Mubashir Sikander with his team receiving the first position cheque at the 2nd Industrial Open House, Career Fair and Project Exhibition 2026"
+                loading="lazy" decoding="async"></figure>
+            <div class="ico"><svg class="i">
+                <use href="#i-award" />
+              </svg></div>
+            <div>
+              <h3>1st Position, Project Expo 2026</h3>
+              <div class="meta"><b>KFUEIT</b><span>Jul 2026</span><span>PKR 15,000 prize</span></div>
+              <p>First place in the Social Sciences and Natural Sciences category at KFUEIT’s 2nd Industrial Open House
+                &amp; Project Expo 2026, for Hairalize, our AI-powered alopecia detection system.</p>
+            </div>
+          </article>
+          <article class="card acard v travel glow spot rv" style="--ac:var(--p);--tc:var(--p);--i:1">
+            <figure class="aph"><img src="assets/award-rising-star.webp" width="546" height="365"
+                alt="Hafiz Mubashir Sikander receiving the Rising Star of the Year award at VirtueNetz" loading="lazy"
+                decoding="async"></figure>
+            <div class="ico"><svg class="i">
+                <use href="#i-star" />
+              </svg></div>
+            <div>
+              <h3>Rising Star of the Year 2026</h3>
+              <div class="meta"><b>VirtueNetz</b><span>Mar 2026</span></div>
+              <p>Presented by the CEO of VirtueNetz for outstanding performance, dedication, continuous learning and
+                professional growth.</p>
+            </div>
+          </article>
+        </div>
+        <div class="rec rv" id="rec" role="region" aria-roledescription="carousel" aria-label="Recommendations">
+          <div class="rec-head">
+            <h3>Recommendations</h3>
+            <div class="rec-ctl">
+              <div class="dots" id="rdots"></div>
+              <button class="ibtn" id="qp" type="button" aria-label="Previous recommendation"><svg class="i sm">
+                  <use href="#i-chev-l" />
+                </svg></button>
+              <button class="ibtn" id="qn" type="button" aria-label="Next recommendation"><svg class="i sm">
+                  <use href="#i-chev-r" />
+                </svg></button>
+            </div>
+          </div>
+          <div class="rviewport" id="rview">
+            <div class="rtrack" id="rtrack"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="sh rv"><span class="eyebrow">Contact</span>
+          <h2 class="h2">Have an idea? <span class="grad">Let’s build it.</span></h2>
+          <p class="sub">Send a message and I’ll reply. You can also reach me on LinkedIn.</p>
+        </div>
+        <div class="contact">
+          <div class="cinfo rv">
+            <a class="crow" href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank"
+              rel="noopener"><span class="ico" style="--ac:var(--c)"><svg class="i">
+                  <use href="#i-linkedin" />
+                </svg></span><span><small>LinkedIn</small><b>hafiz-mubashir-sikander</b></span><svg class="i sm end">
+                <use href="#i-arrow-ur" />
+              </svg></a>
+            <a class="crow" href="https://github.com/hafiz-mubashir-sikander" target="_blank" rel="noopener"><span
+                class="ico" style="--ac:var(--p)"><svg class="i fill" viewBox="0 0 16 16">
+                  <use href="#i-github" />
+                </svg></span><span><small>GitHub</small><b>hafiz-mubashir-sikander</b></span><svg class="i sm end">
+                <use href="#i-arrow-ur" />
+              </svg></a>
+            <a class="crow" href="resume/flutter-developer-resume.pdf" download><span class="ico"
+                style="--ac:var(--a)"><svg class="i">
+                  <use href="#i-download" />
+                </svg></span><span><small>Resume · PDF</small><b>Flutter Developer resume</b></span><svg
+                class="i sm end">
+                <use href="#i-download" />
+              </svg></a>
+            <button class="crow hide" id="copyemail" type="button"><span class="ico" style="--ac:var(--k)"><svg
+                  class="i">
+                  <use href="#i-mail" />
+                </svg></span><span><small>Email · tap to copy</small><b id="emailtxt"></b></span><svg class="i sm end"
+                id="copyico">
+                <use href="#i-copy" />
+              </svg></button>
+            <div class="crow" style="cursor:default"><span class="ico" style="--ac:var(--g)"><svg class="i">
+                  <use href="#i-pin" />
+                </svg></span><span><small>Based in</small><b>Rahim Yar Khan, Pakistan</b></span></div>
+          </div>
+          <form class="card form rv" id="cf" novalidate style="--i:1">
+            <div class="frow">
+              <div class="fld"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name"
+                  placeholder="Your name" required aria-describedby="e-name"><span class="err" id="e-name"
+                  role="alert"></span></div>
+              <div class="fld"><label for="f-email">Email</label><input id="f-email" name="email" type="email"
+                  autocomplete="email" placeholder="you@example.com" required aria-describedby="e-email"><span
+                  class="err" id="e-email" role="alert"></span></div>
+            </div>
+            <div class="fld"><label for="f-sub">Subject <i>(optional)</i></label><input id="f-sub" name="subject"
+                placeholder="What’s it about?"></div>
+            <div class="fld"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="4"
+                placeholder="Tell me about your project" required aria-describedby="e-msg"></textarea><span class="err"
+                id="e-msg" role="alert"></span></div>
+            <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="fstatus" id="fs" role="status" aria-live="polite" hidden></div>
+            <div class="row"><button class="btn pri shine travel" id="sb" type="submit"><span id="sbt">Send
+                  message</span> <svg class="i sm arr">
+                  <use href="#i-arrow-right" />
+                </svg></button>
+              <a class="btn hide" id="alt" href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank"
+                rel="noopener">Message on LinkedIn <svg class="i sm">
+                  <use href="#i-arrow-ur" />
+                </svg></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot" id="footer" aria-label="Site footer">
+    <div class="wrap">
+      <div class="fcta rv">
+        <div>
+          <h2>Have a product in mind?</h2>
+          <p>I’m a Flutter and Unity developer who takes work from first screen to store listing. The fastest way to
+            reach me is LinkedIn.</p>
+        </div>
+        <div class="row"><a class="btn pri shine" href="#contact">Send a message <svg class="i sm arr">
+              <use href="#i-arrow-right" />
+            </svg></a><a class="btn" href="resume/flutter-developer-resume.pdf" download><svg class="i sm">
+              <use href="#i-download" />
+            </svg>Resume</a><a class="btn" href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank"
+            rel="noopener">LinkedIn <svg class="i sm">
+              <use href="#i-arrow-ur" />
+            </svg></a></div>
+      </div>
+
+      <div class="fgrid">
+        <div class="fbrand">
+          <div class="nm"><a class="mono" href="#home" aria-label="Back to top">MS</a>
+            <div><b>Hafiz Mubashir Sikander</b><span>Flutter &amp; Game Developer</span></div>
+          </div>
+          <p>Mobile apps and Unity games, from the first screen to the store listing. Founder of Meteredo, co-founder of
+            Hairalize.</p>
+          <span class="pill"><span class="dot"></span>Flutter Developer at VirtueNetz</span>
+          <div class="row" style="gap:8px">
+            <a class="ibtn" href="https://www.linkedin.com/in/hafiz-mubashir-sikander" target="_blank" rel="noopener"
+              aria-label="LinkedIn (opens in a new tab)"><svg class="i sm">
+                <use href="#i-linkedin" />
+              </svg></a>
+            <a class="ibtn" href="https://github.com/hafiz-mubashir-sikander" target="_blank" rel="noopener"
+              aria-label="GitHub (opens in a new tab)"><svg class="i sm fill" viewBox="0 0 16 16">
+                <use href="#i-github" />
+              </svg></a>
+          </div>
+        </div>
+        <nav class="fcol" aria-label="Footer navigation">
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience &amp; education</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="resume/flutter-developer-resume.pdf" download>Resume (PDF)<svg class="i" aria-hidden="true">
+                  <use href="#i-download" />
+                </svg></a></li>
+          </ul>
+        </nav>
+        <div class="fcol">
+          <h3>Projects</h3>
+          <ul id="f-projects"></ul>
+        </div>
+        <div class="fcol wide">
+          <h3>Products &amp; links</h3>
+          <ul id="f-links"></ul>
+        </div>
+        <div class="fcol contact-col">
+          <h3>Connect</h3>
+          <div class="fmeta">
+            <div><svg class="i">
+                <use href="#i-pin" />
+              </svg><span>Rahim Yar Khan,<br>Punjab, Pakistan</span></div>
+            <div><svg class="i">
+                <use href="#i-clock" />
+              </svg><span>Local time <b id="ftime">—</b></span></div>
+            <div><svg class="i">
+                <use href="#i-briefcase" />
+              </svg><span>VirtueNetz, on-site</span></div>
+            <div class="hide" id="f-email-row"><svg class="i">
+                <use href="#i-mail" />
+              </svg><button class="lk" id="f-email" type="button"
+                style="background:none;border:0;padding:0;color:var(--tx);cursor:pointer;font:inherit;font-weight:600;text-align:left"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fcreds" aria-label="Credentials">
+        <span class="chip"><svg class="i">
+            <use href="#i-briefcase" />
+          </svg>Flutter Developer, VirtueNetz</span>
+        <span class="chip e"><svg class="i">
+            <use href="#i-grad" />
+          </svg>BS Computer Science, KFUEIT</span>
+        <span class="chip"><svg class="i">
+            <use href="#i-award" />
+          </svg>1st Position, Project Expo 2026</span>
+        <span class="chip"><svg class="i">
+            <use href="#i-star" />
+          </svg>Rising Star of the Year 2026</span>
+      </div>
+      <p class="fnote">Company and client source code stays private; the project pages here are documentation-only
+        showcases. Google Play, App Store and other product names belong to their respective owners.</p>
+
+      <div class="fbot">
+        <div class="l"><span>© <span id="yr">2026</span> Hafiz Mubashir Sikander. All rights reserved.</span><span>Built
+            with plain HTML, CSS and JavaScript.</span></div>
+        <div class="r"><button class="ibtn theme-btn" id="theme2" type="button" aria-label="Switch theme"><svg
+              class="i sm sun">
+              <use href="#i-sun" />
+            </svg><svg class="i sm moon">
+              <use href="#i-moon" />
+            </svg></button>
+          <a class="btn sm" href="#home">Back to top <svg class="i sm">
+              <use href="#i-arrow-up" />
+            </svg></a>
         </div>
       </div>
     </div>
+  </footer>
 
-    <div class="fcreds" aria-label="Credentials">
-      <span class="chip"><svg class="i"><use href="#i-briefcase"/></svg>Flutter Developer, VirtueNetz</span>
-      <span class="chip e"><svg class="i"><use href="#i-grad"/></svg>BS Computer Science, KFUEIT</span>
-      <span class="chip"><svg class="i"><use href="#i-award"/></svg>1st Position, Project Expo 2026</span>
-      <span class="chip"><svg class="i"><use href="#i-star"/></svg>Rising Star of the Year 2026</span>
-    </div>
-    <p class="fnote">Company and client source code stays private; the project pages here are documentation-only showcases. Google Play, App Store and other product names belong to their respective owners.</p>
+  <a class="ibtn totop" id="totop" href="#home" aria-label="Back to top"><svg class="i sm">
+      <use href="#i-arrow-up" />
+    </svg></a>
+  <dialog id="dl" aria-labelledby="dl-title"></dialog>
 
-    <div class="fbot">
-      <div class="l"><span>© <span id="yr">2026</span> Hafiz Mubashir Sikander. All rights reserved.</span><span>Built with plain HTML, CSS and JavaScript.</span></div>
-      <div class="r"><button class="ibtn theme-btn" id="theme2" type="button" aria-label="Switch theme"><svg class="i sm sun"><use href="#i-sun"/></svg><svg class="i sm moon"><use href="#i-moon"/></svg></button>
-        <a class="btn sm" href="#home">Back to top <svg class="i sm"><use href="#i-arrow-up"/></svg></a></div>
-    </div>
-  </div>
-</footer>
-
-<a class="ibtn totop" id="totop" href="#home" aria-label="Back to top"><svg class="i sm"><use href="#i-arrow-up"/></svg></a>
-<dialog id="dl" aria-labelledby="dl-title"></dialog>
-
-<script src="js/projects.js"></script>
-<script src="js/main.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

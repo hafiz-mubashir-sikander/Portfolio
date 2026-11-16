@@ -116,14 +116,21 @@
 
   /* ---------- projects ---------- */
   const platTag = p => p.plat === "both" ? "Android · iOS" : p.plat === "android" ? "Android" : p.plat === "ios" ? "iOS" : "Private";
-  const mock = p => `<div class="mock ${p.form === "wide" ? "wide" : "phone"}" aria-hidden="true"><span class="glyph">${esc(p.n[0])}</span><small>Preview placeholder</small></div>`;
+  /* project media: thumbnail (2:1, responsive srcset) and app icon from window.PM */
+  const MEDIA = id => window.PM && window.PM[id];
+  const thumb = (p, sizes, eager) => {
+    const m = MEDIA(p.id); if (!m) return `<span class="glyph" aria-hidden="true">${esc(p.n[0])}</span>`;
+    const u = w => `${m.d}thumb-${w}.webp ${w}w`;
+    return `<img class="pmedia" src="${m.d}thumb-900.webp" srcset="${u(600)}, ${u(900)}, ${u(1200)}" sizes="${sizes}" width="1200" height="600" alt="${esc(p.n)} preview" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+  };
+  const picon = (p, c = "picon") => MEDIA(p.id) ? `<img class="${c}" src="${MEDIA(p.id).d}icon.png" width="48" height="48" alt="" aria-hidden="true" decoding="async">` : "";
 
   $("#feat").innerHTML = P.filter(p => p.ft).map((p, i) => `
     <button class="card fcard travel glow spot tilt shine rv" type="button" data-open="${p.id}" style="--ac:${p.ac};--tc:${p.ac};--i:${i}" aria-label="Open case study: ${esc(p.n)}">
-      <div class="fprev">${mock(p)}</div>
+      <div class="fprev">${thumb(p, "(min-width:960px) 380px, (min-width:760px) 46vw, 100vw", i === 0)}</div>
       <div class="fbody">
         <span class="st">${esc(p.st)}</span>
-        <h3>${esc(p.n)}</h3><div class="cat">${esc(p.cat)}</div>
+        <div class="ptitle">${picon(p)}<div><h3>${esc(p.n)}</h3><div class="cat">${esc(p.cat)}</div></div></div>
         <p>${esc(p.d)}</p>
         <div class="chips">${p.t.slice(0, 3).map(x => `<span class="chip">${esc(x)}</span>`).join("")}</div>
         <div class="role"><b>My role:</b> <span>${esc(p.role)}</span></div>
@@ -135,10 +142,10 @@
 
   $("#pg").innerHTML = P.map((p, i) => `
     <button class="card pc spot tilt" type="button" data-open="${p.id}" data-id="${p.id}" style="--ac:${p.ac}" aria-label="Open case study: ${esc(p.n)}">
-      <div class="pimg"><span class="glyph" aria-hidden="true">${esc(p.n[0])}</span><span class="chip plat">${platTag(p)}</span></div>
+      <div class="pimg">${thumb(p, "(min-width:1100px) 360px, (min-width:640px) 46vw, 100vw")}<span class="chip plat">${platTag(p)}</span></div>
       <div class="pbody">
         <span class="st">${esc(p.st)}</span>
-        <h3>${esc(p.n)}</h3><div class="cat">${esc(p.cat)}</div>
+        <div class="ptitle">${picon(p)}<div><h3>${esc(p.n)}</h3><div class="cat">${esc(p.cat)}</div></div></div>
         <p>${esc(p.d)}</p>
         <div class="chips">${p.t.slice(0, 3).map(x => `<span class="chip">${esc(x)}</span>`).join("")}${p.t.length > 3 ? `<span class="chip">+${p.t.length - 3}</span>` : ""}</div>
         <div class="role"><b>My role:</b> <span>${esc(p.role)}</span></div>
@@ -173,13 +180,45 @@
     const ic = n.includes("play") && !n.includes("store") || n.includes("video") ? "play" : n.includes("app store") ? "smartphone" : n.includes("github") ? "github" : n.includes("privacy") ? "shield" : "globe";
     return ic === "github" ? '<svg class="i sm fill" viewBox="0 0 16 16" aria-hidden="true"><use href="#i-github"/></svg>' : icon(ic);
   };
+  /* ---------- screenshot gallery + lightbox ---------- */
+  const gallery = p => {
+    const m = MEDIA(p.id); if (!m || !m.s.length) return "";
+    return `<section class="dgal ${m.k}" aria-label="${esc(p.n)} screenshots">
+      <div class="gal-h"><h4>Screenshots <small>${m.s.length}</small></h4>
+        <div class="gal-nav"><button class="ibtn sm" type="button" data-gal="-1" aria-label="Previous screenshots">${icon("chev-l")}</button><button class="ibtn sm" type="button" data-gal="1" aria-label="Next screenshots">${icon("chev-r")}</button></div></div>
+      <div class="gal-track" tabindex="0" role="list">${m.s.map((x, i) => `<button class="shot${x[2] / x[1] > 2 ? " crop" : ""}" type="button" role="listitem" data-shot="${p.id}:${i}" style="--ar:${x[1]}/${x[2]}" aria-label="View screenshot ${i + 1} of ${m.s.length}: ${esc(x[3])}"><img src="${m.d}shots/${x[0]}" width="${x[1]}" height="${x[2]}" alt="${esc(p.n)}: ${esc(x[3])}" loading="lazy" decoding="async" draggable="false"></button>`).join("")}</div>
+    </section>`;
+  };
+  const lb = document.createElement("dialog"); lb.id = "lb"; lb.setAttribute("aria-label", "Screenshot viewer"); document.body.appendChild(lb);
+  let lbState = null;
+  function lbShow(i) {
+    const { p, m } = lbState; lbState.i = (i + m.s.length) % m.s.length; const x = m.s[lbState.i];
+    lb.innerHTML = `<button class="ibtn lbclose" type="button" data-lbclose aria-label="Close viewer">${icon("x")}</button>
+      <div class="lbstage${x[2] / x[1] > 2 ? " tall" : ""}"><img src="${m.d}shots/${x[0]}" width="${x[1]}" height="${x[2]}" alt="${esc(p.n)}: ${esc(x[3])}" decoding="async"></div>
+      <div class="lbbar"><button class="ibtn" type="button" data-lbstep="-1" aria-label="Previous screenshot">${icon("chev-l")}</button><span>${esc(x[3])} <small>${lbState.i + 1} / ${m.s.length}</small></span><button class="ibtn" type="button" data-lbstep="1" aria-label="Next screenshot">${icon("chev-r")}</button></div>`;
+  }
+  lb.addEventListener("click", e => {
+    if (e.target === lb || e.target.closest("[data-lbclose]")) lb.close();
+    const st = e.target.closest("[data-lbstep]"); if (st) lbShow(lbState.i + +st.dataset.lbstep);
+  });
+  lb.addEventListener("keydown", e => { if (e.key === "ArrowRight") lbShow(lbState.i + 1); else if (e.key === "ArrowLeft") lbShow(lbState.i - 1); });
+  lb.addEventListener("close", () => { lbState = null; });
+  dl.addEventListener("click", e => {
+    const g = e.target.closest("[data-gal]");
+    if (g) { const t = $(".gal-track", dl); t.scrollBy({ left: +g.dataset.gal * t.clientWidth * .85, behavior: RM ? "auto" : "smooth" }); return; }
+    const sh = e.target.closest("[data-shot]"); if (!sh) return;
+    const [id, i] = sh.dataset.shot.split(":"); lbState = { p: P.find(x => x.id === id), m: MEDIA(id), i: +i }; lbShow(+i); lb.showModal();
+  });
+
   function openProject(id) {
     const p = P.find(x => x.id === id); if (!p) return;
     lastFocus = document.activeElement; dl.style.setProperty("--ac", p.ac);
     dl.innerHTML = `
       <div class="dscroll">
         <div class="dh"><button class="ibtn dclose" type="button" data-close aria-label="Close case study">${icon("x")}</button>
-          <span class="st" style="--ac:${p.ac}">${esc(p.st)}</span><h2 id="dl-title">${esc(p.n)}</h2><div class="mu">${esc(p.cat)}</div></div>
+          <span class="st" style="--ac:${p.ac}">${esc(p.st)}</span>
+          <div class="dtitle">${picon(p, "dicon")}<div><h2 id="dl-title">${esc(p.n)}</h2><div class="mu">${esc(p.cat)}</div></div></div></div>
+        ${gallery(p)}
         <div class="dgrid">
           <div class="dmain">
             <div><h4>Overview</h4><p>${esc(p.d)}</p></div>
@@ -187,7 +226,6 @@
             <div><h4>The solution</h4><p>${esc(p.sol)}</p></div>
             <div><h4>My role</h4><p>${esc(p.role)}. ${esc(p.note)}</p></div>
             <div><h4>Key features</h4><ul>${p.f.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
-            <div class="dshot">No screenshots are published here yet. Nothing on this page is a mock-up of the real app.</div>
           </div>
           <aside class="daside" aria-label="Project details">
             <div><h4>Platform</h4><span class="chip">${platTag(p)}</span></div>

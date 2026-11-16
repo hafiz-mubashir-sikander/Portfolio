@@ -114,3 +114,66 @@ window.Q = [
 
 /* Rotating hero roles */
 window.ROLES = ["Flutter Developer", "Mobile App Developer", "Game Developer", "Software Engineer", "Product Founder"];
+
+/* Project media ---------------------------------------------------------
+   d    : folder in assets/projects/ (icon.png, thumb-600/900/1200.webp, shots/)
+   k    : screenshot shape (phone | tablet | wide) — sets the gallery tile height
+   s    : screenshots as [file, width, height, caption]. Files are pre-sized, so
+          add a new image to the folder, then add one line here.                */
+window.PM = {
+  hairalize: { d: "assets/projects/hairalize/", k: "phone", s: [
+      ["01.webp", 426, 900, "Sign in"],
+      ["02.webp", 426, 900, "Role selection"],
+      ["03.webp", 426, 900, "Patient dashboard"],
+      ["04.webp", 426, 900, "Doctor dashboard"],
+      ["05.webp", 426, 900, "Patients list"],
+      ["06.webp", 426, 900, "Doctors list"],
+      ["07.webp", 426, 900, "Appointments"],
+      ["08.webp", 426, 900, "AI scan reports"],
+      ["09.webp", 426, 900, "Subscription plan details"]
+  ]},
+  meteredo: { d: "assets/projects/meteredo/", k: "phone", s: [
+      ["01.webp", 506, 900, "Meteredo app overview"],
+      ["02.webp", 506, 900, "Manage all your meters"],
+      ["03.webp", 506, 900, "Capture a meter reading"],
+      ["04.webp", 506, 900, "Save readings easily"],
+      ["05.webp", 506, 900, "Reading details"],
+      ["06.webp", 506, 900, "View bills online"],
+      ["07.webp", 506, 900, "Share meters with family"]
+  ]},
+  shards: { d: "assets/projects/shards/", k: "wide", s: [
+      ["01.webp", 1500, 655, "Gameplay, level scene 1"],
+      ["02.webp", 1500, 659, "Gameplay, level scene 2"],
+      ["03.webp", 1500, 659, "Gameplay, level scene 3"],
+      ["04.webp", 1500, 659, "Gameplay, level scene 4"],
+      ["05.webp", 1500, 661, "Gameplay, level scene 5"],
+      ["06.webp", 1500, 657, "Gameplay, level scene 6"],
+      ["07.webp", 1500, 657, "Gameplay, level scene 7"],
+      ["08.webp", 1500, 655, "Gameplay, level scene 8"],
+      ["09.webp", 1500, 659, "Gameplay, level scene 9"]
+  ]},
+  technician: { d: "assets/projects/technician/", k: "tablet", s: [
+      ["01.webp", 834, 1194, "Splash screen"],
+      ["02.webp", 834, 1194, "Login screen"],
+      ["03.webp", 834, 1194, "Dashboard"],
+      ["04.webp", 834, 1194, "Scan horse tag"],
+      ["05.webp", 834, 1295, "Scanned horse tag details"],
+      ["06.webp", 834, 1353, "Assigned horse list"],
+      ["07.webp", 834, 1194, "Survey form"],
+      ["08.webp", 834, 1361, "Marking identification"],
+      ["09.webp", 834, 2428, "Head markings"],
+      ["10.webp", 834, 1498, "Leg markings"],
+      ["11.webp", 834, 1161, "Submit markings"],
+      ["12.webp", 834, 1625, "Survey rejected"]
+  ]},
+  unitedceres: { d: "assets/projects/unitedceres/", k: "phone", s: [
+      ["01.webp", 303, 658, "Bulletins and announcements"],
+      ["02.webp", 296, 647, "My profile"],
+      ["03.webp", 297, 635, "Helpdesk tickets"],
+      ["04.webp", 303, 648, "Module classes"],
+      ["05.webp", 301, 652, "Invoices and charges"],
+      ["06.webp", 306, 657, "Timetable"],
+      ["07.webp", 298, 657, "Student attendance"],
+      ["08.webp", 300, 661, "Academic details"]
+  ]}
+};
