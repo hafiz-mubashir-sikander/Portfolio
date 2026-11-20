@@ -106,7 +106,7 @@ window.P = [
     why: "Organisations need one place to manage attendance, leave and overtime requests, approvals, assets and documents, with a separate experience for employees, supervisors and HR administrators.",
     sol: "NKCC is an enterprise workforce management app built with Flutter for Android and iOS. It covers attendance tracking, leave and overtime requests, supervisor approvals, employee management, asset management, digital wallets and document management, with a dedicated interface for each of the three roles.",
     f: ["Employee, Supervisor and HR role-based interfaces", "Attendance management and history", "Leave and overtime requests", "Supervisor approval workflows", "Employee administration", "Asset management", "Digital wallet and documents", "Interactive voice recording and playback", "Audio waveform visualisation"],
-    l: [["Figma design", "https://www.figma.com/design/Bt07jfpHXICRT5eZ3cOZeV/NKCC-App--Copy-"]],
+    l: [["GitHub Docs", "https://github.com/hafiz-mubashir-sikander/nkcc-app"],],
     note: "I designed and built the responsive Flutter interfaces for the Employee, Supervisor and HR modules, implemented voice recording with waveform visualisation, pause and resume, playback and recording controls, and fixed UI and functional issues found during QA. Backend integration was handled by another developer at VirtueNetz. Delivered privately to the client, so there are no store listings and the source is private."
   }
 ];
